@@ -5,7 +5,7 @@ const weatherIcon = document.querySelector(".weather-icon")
 
 
 const apiKey = `5a83d5fc2655f616a6da1b2f8526b1d8`;
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=`
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`
 
 async function checkWeather(cityName) {
 
