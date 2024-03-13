@@ -5,12 +5,14 @@ const weatherIcon = document.querySelector(".weather-icon")
 
 
 const apiKey = `5a83d5fc2655f616a6da1b2f8526b1d8`;
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=`
 
 async function checkWeather(cityName) {
 
     const response = await fetch(`${apiUrl}${cityName}&appid=${apiKey}`);
     // const response = await fetch(apiUrl+ "Delhi" + `&appid=${apiKey}`);
+
+    console.log(response)
 
     if (response.status == 404) {
         document.querySelector(".error").style.display = "block";
@@ -19,7 +21,7 @@ async function checkWeather(cityName) {
     else {
         var data = await response.json();
 
-        console.log(data)
+        // console.log(data)
 
         document.querySelector(".city").innerHTML = data.name;
 
@@ -43,7 +45,7 @@ async function checkWeather(cityName) {
         }
 
         document.querySelector(".weather").style.display = "block";
-        ocument.querySelector(".error").style.display = "none";
+        document.querySelector(".error").style.display = "none";
 
 
     }
